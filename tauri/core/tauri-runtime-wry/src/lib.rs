@@ -2660,7 +2660,7 @@ fn create_webview(
     .map_err(|e| Error::CreateWebview(Box::new(e)))?
     .with_url(&url)
     .unwrap() // safe to unwrap because we validate the URL beforehand
-    .with_transparent(is_window_transparent);
+    .with_transparent(true);
   if webview_attributes.file_drop_handler_enabled {
     webview_builder = webview_builder.with_file_drop_handler(create_file_drop_handler(&context));
   }
