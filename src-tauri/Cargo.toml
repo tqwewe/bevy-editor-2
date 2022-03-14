@@ -1,0 +1,26 @@
+[package]
+name = "bevy_tauri"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = { path = "./bevy", features = [
+  "bevy_audio",
+  "bevy_gilrs",
+  # "bevy_winit",
+  "render",
+  "png",
+  "hdr",
+  "vorbis",
+  # "x11",
+  "filesystem_watcher",
+], default-features = false }
+raw-window-handle = "0.4"
+# tauri = { version = "1.0.0-rc.4", features = ["api-all", "macos-private-api"] }
+tauri = { path = "./tauri/core/tauri", features = [
+  "api-all",
+  "macos-private-api",
+] }
+window-vibrancy = "0.1"
+
+[build-dependencies]
