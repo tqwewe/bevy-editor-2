@@ -17,10 +17,7 @@ bevy = { path = "../bevy", features = [
 ], default-features = false }
 raw-window-handle = "0.4"
 # tauri = { version = "1.0.0-rc.4", features = ["api-all", "macos-private-api"] }
-tauri = { path = "../tauri/core/tauri", features = [
-  "api-all",
-  "macos-private-api",
-] }
+tauri = { path = "../tauri/core/tauri", features = ["api-all", "macos-private-api"] }
 window-vibrancy = "0.1"
 
 [build-dependencies]
