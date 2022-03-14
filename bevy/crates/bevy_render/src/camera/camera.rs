@@ -69,10 +69,12 @@ impl RenderTarget {
         }
     }
     pub fn get_physical_size(&self, windows: &Windows, images: &Assets<Image>) -> Option<UVec2> {
+        println!("get physical size");
         match self {
-            RenderTarget::Window(window_id) => windows
-                .get(*window_id)
-                .map(|window| UVec2::new(window.physical_width(), window.physical_height())),
+            RenderTarget::Window(window_id) => windows.get(*window_id).map(|window| {
+                println!("{}x{}", window.physical_width(), window.physical_height());
+                UVec2::new(window.physical_width(), window.physical_height())
+            }),
             RenderTarget::Image(image_handle) => images.get(image_handle).map(|image| {
                 let Extent3d { width, height, .. } = image.texture_descriptor.size;
                 UVec2::new(width, height)

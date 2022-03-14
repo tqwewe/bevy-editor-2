@@ -120,6 +120,7 @@ impl Plugin for RenderPlugin {
             .init_debug_asset_loader::<ShaderLoader>()
             .register_type::<Color>();
 
+        println!("{:?}", options.backends);
         if let Some(backends) = options.backends {
             let instance = wgpu::Instance::new(backends);
             let surface = {
