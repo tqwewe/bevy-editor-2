@@ -702,6 +702,7 @@ dependencies = [
  "bevy",
  "raw-window-handle",
  "tauri",
+ "tauri-build",
  "window-vibrancy",
 ]
 
@@ -962,6 +963,17 @@ name = "cargo-manifest"
 version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "af6d65c7592744998c67947ec771c62687c76f00179a83ffd563c0482046bb98"
+dependencies = [
+ "serde",
+ "serde_derive",
+ "toml",
+]
+
+[[package]]
+name = "cargo_toml"
+version = "0.11.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4e270ef0cd868745878982f7ce470aa898d0d4bb248af67f0cf66f54617913ef"
 dependencies = [
  "serde",
  "serde_derive",
@@ -4818,6 +4830,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "tauri-build"
+version = "1.0.0-rc.4"
+dependencies = [
+ "anyhow",
+ "cargo_toml",
+ "serde_json",
+ "tauri-utils",
+ "winres",
+]
+
+[[package]]
 name = "tauri-codegen"
 version = "1.0.0-rc.3"
 dependencies = [
@@ -4885,6 +4908,7 @@ name = "tauri-utils"
 version = "1.0.0-rc.3"
 dependencies = [
  "ctor",
+ "glob",
  "heck 0.4.0",
  "html5ever",
  "json-patch",
@@ -4898,6 +4922,7 @@ dependencies = [
  "serialize-to-javascript",
  "thiserror",
  "url",
+ "walkdir",
  "zstd",
 ]
 
@@ -5717,6 +5742,15 @@ name = "windows_x86_64_msvc"
 version = "0.33.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ff1e4aa646495048ec7f3ffddc411e1d829c026a2ec62b39da15c1055e406eaa"
+
+[[package]]
+name = "winres"
+version = "0.1.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b68db261ef59e9e52806f688020631e987592bd83619edccda9c47d42cde4f6c"
+dependencies = [
+ "toml",
+]
 
 [[package]]
 name = "winrt-notification"
